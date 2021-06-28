@@ -72,7 +72,7 @@ function getRandomCard(){
     }
     return randomNumber
 }
-
+/*To reset the game */
 function resetGame(){
     cards = []
     

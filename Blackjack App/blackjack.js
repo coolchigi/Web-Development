@@ -5,7 +5,7 @@ let isAlive = false
 /*To store the cards */
 let cards = []
 let player = {
-    name: "Chigo",
+    name: window.prompt("Welcome to my BlackJack game! Enter your name: "),
     chips: 190
 }
 let playerID = document.getElementById("player-el")

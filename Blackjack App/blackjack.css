@@ -1,0 +1,41 @@
+h1{
+    color: goldenrod;
+    font-size: 50px;
+}
+
+body{
+    background-image: url("casino.jpg");
+    text-align: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    font-weight: bold;
+    
+}
+
+p{
+    color: blanchedalmond;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+#message-el{
+    font-style: italic;
+}
+
+@media (any-hover: hover) {
+    button:hover{
+        background:honeydew;
+    }
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background:goldenrod;
+    color: #016f32;
+    width:170px;
+    font-weight: bold;
+    margin: 5px;
+}

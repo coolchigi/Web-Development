@@ -1,12 +1,28 @@
-/**
- * Hi TA marking my work, when testing the drop items, you may notice some errors that has something to do with the items.
- * This is due to the fact that you'd have to press the div and nothing but the div, else.
- * Pressing anything outside the div would cause some issues.
- * This is because, the div has some nested element, i know bad design and fridgeName would be an empty string and those errors would appear.
- * I apologize for the inconvinence.
- *
- *Current state, updates every other thing but items :'()
- */
+//remember to add comments!
+
+class Fridge {
+  constructor(
+    _name,
+    _capacity,
+    _numItemsAccepted,
+    _canAcceptItems,
+    _acceptedTypes,
+    _contactPerson,
+    _contactPhone,
+    _address,
+    _items
+  ) {
+    this.name = _name;
+    this.capacity = _capacity;
+    this.numItemsAccepted = _numItemsAccepted;
+    this.canAcceptItems = _canAcceptItems;
+    this.acceptedTypes = _acceptedTypes;
+    this.contactPerson = _contactPerson;
+    this.contactPhone = _contactPhone;
+    this.address = _address;
+    this.items = _items;
+  }
+}
 
 var Fridges = {};
 
@@ -89,7 +105,6 @@ function loadAdd() {
   itemImage.addEventListener("input", handleAdd);
   itemName.addEventListener("input", handleAdd);
   itemType.addEventListener("input", handleAdd);
-  console.log(itemName.value);
 
   addButton.addEventListener("click", sendJson);
 }
@@ -97,7 +112,6 @@ function handleAdd(event) {
   let numFilled = 0;
   for (let i = 0; i < itemsArray.length; i++) {
     if (itemsArray[i].value.length > 0) {
-      console.log(itemsArray[i].value);
       numFilled++;
     }
   }
@@ -136,11 +150,10 @@ function sendJson(event) {
 
 function displayFridges(pageId) {
   let fridges = Fridges["data"];
-  console.log(fridges);
   let fridgesSection = document.getElementById("fridges");
   let header = document.createElement("h1");
   header.textContent = "Available fridges";
-  console.log(header);
+
   fridgesSection.appendChild(header);
 
   for (let i = 0; i < fridges.length; i++) {
@@ -187,9 +200,10 @@ function displayFridgeContents(fridgeID) {
               <span class="singleItem_quantity">Quantity: ${fridge["items"][key].quantity}</span>
               <div class="singleItem_pickup">Pickup: 
               <span class="item-value">
-              <button id=${fridge["items"][key].name} onclick="decrement(this)" class="decrement">-</button>
-              <input class="quantityInput" type="number" value=0 >
-              <button id=${fridge["items"][key].name} onclick="increment(this)" class="increment">+</button>
+              <button id="decrement_btn" class="decrement">-</button>
+              <input oninput="console.log('abc')" class="quantityInput" type="number" value=0 >
+              <button id="increment_btn"
+              class="increment">+</button>
               </span>
               </div>
           </div></div>`
@@ -198,6 +212,12 @@ function displayFridgeContents(fridgeID) {
 
   document.getElementById("fridges").classList.add("hidden");
   document.getElementById("fridge_details").classList.remove("hidden");
+  document
+    .getElementById("increment_btn")
+    .addEventListener("click", cartEvent(item));
+  document
+    .getElementById("decrement_btn")
+    .addEventListener("click", cartEvent(item));
 }
 
 function populateLeftMenu(fridge) {
@@ -239,7 +259,6 @@ function filterMiddleView(event) {
 
         for (let i = 0; i < singleItem.length; i++) {
           if (element.id !== singleItem[i].id) {
-            console.log(singleItem[i].id);
             singleItem[i].classList.add("hidden");
           } else {
             singleItem[i].classList.remove("hidden");
@@ -257,37 +276,10 @@ function filterMiddleView(event) {
   }
 }
 
-function decrement(e) {
-  let val = e.parentElement.children[1].value;
-  if (val > 0) {
-    val--;
-  } else {
-    val = 0;
-  }
-  e.parentElement.children[1].value = val;
+function cartEvent(item) {
+  return function () {};
 }
 
-function increment(e) {
-  let fridge = Fridges["data"];
-
-  //console.log(val);
-  let quantity = 0;
-  let val = e.parentElement.children[1].value;
-
-  for (const [key, value] of Object.entries(fridge)) {
-    console.log(fridge[value].quantity);
-    if (fridge[key]["items"][key].name == e.id) {
-      quantity = fridge[key]["items"][key].quantity;
-    }
-  }
-  console.log("Quantity: " + quantity);
-  if (val < quantity) {
-    val++;
-  } else {
-    val = val;
-  }
-  e.parentElement.children[1].value = val;
-}
 function checkTextField(event) {
   let element = event.target;
 

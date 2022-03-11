@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="css/comm-fridge.css" />
+    <script defer src="js/comm-fridge.js"></script>
+  </head>
+
+  <body id="add_items">
+    <section>
+      <div id="respArea"></div>
+      <h1 id="frigeHeading">Add an Item</h1>
+      <br />
+      <form>
+        <label for="itemName">Name: </label>
+        <input type="text" id="itemName" name="itemName" />
+        <br /><br />
+        <label for="itemType">Type: </label>
+        <input type="text" id="itemType" />
+        <br /><br />
+        <label for="itemImage">Image: </label>
+        <input type="text" id="itemImage" name="itemImage" accept="image/*" />
+        <br /><br />
+        <button id="add_btn" disabled="true">Add Item</button>
+      </form>
+    </section>
+  </body>
+</html>

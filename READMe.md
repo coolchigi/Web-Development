@@ -1,4 +1,4 @@
-# Community Fridge Application with added functionality
+# XXXXX
 
 If you have been following me on this journey, you'd notice that this is just an addition to the functionality of the community fridge application. Specifically, this allows users to drop off items. Sadly I wasnt able to implement all the features, however the sleeplessnight paid off I hope!
 
@@ -29,7 +29,7 @@ both server and client code are located in the js folder
 directory structure:
 parent_folder/
 css/
-comm-fridge.css
+xxxxx.css
 images/
 js/
 the html files
@@ -79,4 +79,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- Thank you TA for marking my work
+- xxxxxx

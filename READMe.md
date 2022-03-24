@@ -1,6 +1,6 @@
 # XXXXX
 
-If you have been following me on this journey, you'd notice that this is just an addition to the functionality of the community fridge application. Specifically, this allows users to drop off items. Sadly I wasnt able to implement all the features, however the sleeplessnight paid off I hope!
+If you have been following me on this journey, you'd notice that this is just an addition to the functionality. Specifically, this allows users to drop off items. Sadly I wasnt able to implement all the features, however the sleeplessnight paid off I hope!
 
 ## Getting Started
 
